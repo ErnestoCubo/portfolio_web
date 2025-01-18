@@ -1,0 +1,32 @@
+{
+    "experiences": [
+        {
+            "position": "Cybersecurity Engineer",
+            "company": "Mediapost",
+            "startDate": "2022-01-01",
+            "finishDate": "2022-07-30",
+            "description": "Pentesting web, análisis de vulnerabilidades (BurpSuite, Kali Linux, Nessus). Gestión de las amenazas, así como bastionado de servidores. Gestión e integración de dispositivos de seguridad."
+        },
+        {
+            "position": "Cybersecurity Analyst",
+            "company": "BeDisruptive",
+            "startDate": "2022-08-01",
+            "finishDate": "2023-05-30",
+            "description": "Análisis de vulnerabilidades y amenazas. Gestión de las amenazas, despliegue usando entornos automatizados DevOps (Docker, Github, Python). Gestión e integración de dispositivos de seguridad con fuentes de inteligencia (PaloAlto, XDR, XSOAR). Desarrollo de playbooks para automatizar tareas de seguridad. (Python)"
+        },
+        {
+            "position": "Software Engineer",
+            "company": "Innotec Security",
+            "startDate": "2023-06-01",
+            "finishDate": "2024-08-30",
+            "description": "Diseño y desarrollo de software para la OTAN, INCIBE y CCN (Python, UML, Github). Desarrollo de automatizaciones para la integración de fuentes de inteligencia usando metodologías DevOps (Python, Linux, Docker, Kubernetes, CronJobs). Desarrollo fullstack para crear portales web (Django, React, Node, MariaDB, Redis). Diseño de arquitecturas de microservicios y despliegue en entornos cloud (AWS, Azure, GCP). Integración y configuración de herramientas de análisis de código dinámico y estático (Semgrep, SonarQube)."
+        },
+        {
+            "position": "Backend Developer",
+            "company": "Vinci Energies",
+            "startDate": "2023-07-01",
+            "finishDate": "2024-08-30",
+            "description": "Desarrollo de backend para stream (Golang, Python, FastAPI, Redis). Desarrollo de automatizaciones para monitorización de equipos usando metodologías DevOps (Golang, Python, Linux, Docker, Kubernetes, Jenkins, ServiceNow, Azure). Desarrollo de despliegues automáticos(Azure DevOps, Github Actions, Jenkins, Kubernetes). Desarrollo fullstack para crear portales web (Django, React, MariaDB). Diseño de arquitecturas de microservicios y despliegue en entornos cloud (Golang, Python, AWS, Azure, GCP). Integración y configuración de herramientas de análisis de código dinámico y estático (Semgrep, Dastardly, SonarQube)."
+        }
+    ]
+}

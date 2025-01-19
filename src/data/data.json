@@ -145,5 +145,208 @@
             "role": "DevOps Engineer",
             "image": "/assets/ccn.png"
         }
-    ]
+    ],
+    "certifications": [
+        {
+            "certificate": "eJPTv2",
+            "institution": "eLearnSecurity",
+            "date": "2023-05-20",
+            "image": "https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/81523183"
+        },
+        {
+            "certificate": "CVSS 3.1",
+            "institution": "FIRST",
+            "date": "2022-11-23",
+            "image": "/assets/First CVSSv3.1.png"
+        },
+        {
+            "certificate": "jr Penetration Tester Learning Path",
+            "institution": "Try Hack Me",
+            "date": "2022-02-18",
+            "image": "/assets/THM.png"
+        }
+    ],
+    "courses": {
+        "cybersecurity": [
+            {
+                "course": "First CVSS3.1",
+                "institution": "FIRST",
+                "date": "2022-11-01"
+            },
+            {
+                "course": "Official (ISC)² Certified in Cybersecurity",
+                "institution": "ISC2",
+                "date": "2022-10-01"
+            },
+            {
+                "course": "Fundamentals of Cloud Security",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "Fundamentals of Network Security",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "Junior penetration tester",
+                "institution": "TryHackMe",
+                "date": "2022-02-01"
+            },
+            {
+                "course": "Ethical Hacking Essentials EHE",
+                "institution": "EC-Council Learning",
+                "date": "2022-01-01"
+            },
+            {
+                "course": "Curso ethical hacking",
+                "institution": "Udemy",
+                "date": "2022-01-01"
+            }
+        ],
+        "software": [
+            {
+                "course": "Docker Mastery",
+                "institution": "Udemy",
+                "date": "2023-05-01"
+            },
+            {
+                "course": "Python for Beginners",
+                "institution": "Coursera",
+                "date": "2023-04-01"
+            },
+            {
+                "course": "Cortex XDR Working with JSON Objects",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR XQL Data Types",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR XQL Functions",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR XQL Operators",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR: Visualizing XQL Query Results",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR: XQL Building Blocks",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR: XQL Syntax Basics",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            }
+        ],
+        "monitoring": [
+            {
+                "course": "Cortex XSOAR: Analyst Training",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "Fundamentals of SOC",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "The Fundamentals of SOC (Security Operations Center)",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "Introduction to Cortex XSOAR",
+                "institution": "Palo Alto Networks",
+                "date": "2022-09-01"
+            },
+            {
+                "course": "Cortex XDR 3 Causality and Analytics Concepts",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Getting Started with Endpoint Protection",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Getting Started with Rules",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Handling Cortex XDR Alerts",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Introduction",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Performing Investigations",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR 3 Responding to Attacks",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR Broker VM",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XDR Managed Threat Hunting",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XSOAR 6.9 Analyst - Incident Investigation",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XSOAR 6.9 Analyst - Incident Management",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XSOAR 6.9_Analyst - Analysis and Collaboration",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XSOAR IT Administrator Training",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Cortex XSOAR SOAR Engineer Training",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            },
+            {
+                "course": "Threat Hunting Using Cortex XDR",
+                "institution": "Palo Alto Networks",
+                "date": "2022-12-01"
+            }
+        ]
+    }
 }

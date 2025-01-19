@@ -1,5 +1,4 @@
 <script>
-	// Puedes definir dinámicamente las palabras clave para resaltar desde aquí si deseas más flexibilidad.
 	const keywords = [
 		'Ingeniero de Software',
 		'fullstack',
@@ -28,9 +27,8 @@
 </section>
 
 <style>
-	/* Estilo para resaltar palabras clave */
 	.highlight {
 		font-weight: bold;
-		color: #16a34a; /* Verde intenso para destacar */
+		color: #16a34a;
 	}
 </style>

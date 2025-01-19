@@ -7,11 +7,11 @@
 	import Career from '../components/Career.svelte';
 	import CollabsSection from '../components/CollabsSection.svelte';
 	import NetworkSeparator from '../components/NetworkSeparator.svelte';
-	import Certificactions from '../components/Certificactions.svelte';
 	import CoursesSection from '../components/CoursesSection.svelte';
 	import ProjectsSection from '../components/ProjectsSection.svelte';
 	import ChallengesSection from '../components/ChallengesSection.svelte';
 	import ResearchSection from '../components/ResearchSection.svelte';
+	import CertificactionsSection from '../components/CertificactionsSection.svelte';
 </script>
 
 <div class="min-h-screen bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
@@ -32,7 +32,7 @@
 	<!-- Separador -->
 	<NetworkSeparator />
 	<!-- Sección Certificaciones -->
-	<Certificactions />
+	<CertificactionsSection />
 	<!-- Sección Cursos -->
 	<CoursesSection />
 	<!-- Sección Proyectos -->

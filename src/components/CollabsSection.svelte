@@ -5,7 +5,7 @@
 
 <section>
 	<div class="collaborations-section bg-gray-500 px-8 py-16 text-gray-900">
-		<h2 class="mb-8 text-center text-3xl font-semibold text-teal-300">
+		<h2 class="mb-8 text-center text-3xl font-semibold text-teal-500">
 			Colaboraciones importantes
 		</h2>
 

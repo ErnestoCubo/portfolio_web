@@ -29,14 +29,13 @@
 </section>
 
 <style>
-	/* Importar la fuente "Press Start 2P" desde Google Fonts */
 	@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 	.marquee-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: #2d3748; /* Color de fondo */
+		background-color: #2d3748;
 		color: white;
 		height: 5rem;
 		overflow: hidden;
@@ -59,15 +58,15 @@
 	.marquee-item {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.5rem; /* Espaciado entre el texto y el icono */
-		padding: 0.5rem 1.5rem; /* Espaciado entre los elementos */
+		gap: 0.5rem;
+		padding: 0.5rem 1.5rem;
 		font-size: 1rem;
-		font-family: 'Press Start 2P', monospace; /* Fuente retro */
+		font-family: 'Press Start 2P', monospace;
 		font-weight: bold;
 	}
 
 	.marquee-item i {
-		font-size: 1.25rem; /* Tamaño de los iconos */
-		color: #00ffc8; /* Color de los iconos */
+		font-size: 1.25rem;
+		color: #00ffc8;
 	}
 </style>

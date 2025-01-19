@@ -1,3 +1,28 @@
+<script>
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const links = document.querySelectorAll('a[href^="#"]');
+
+		links.forEach((link) => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const href = link.getAttribute('href');
+				const targetId = href ? href.substring(1) : '';
+				const targetElement = document.getElementById(targetId);
+
+				if (targetElement) {
+					window.scrollTo({
+						top: targetElement.offsetTop - 20,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+	});
+</script>
+
 <header class="bg-gray-300 p-6 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 	<div class="container mx-auto flex items-center justify-between">
 		<!-- Logo -->
@@ -42,7 +67,7 @@
 
 		<!-- Navegación -->
 		<nav class="space-x-6">
-			<a href="#about" class="hover:text-green-500 dark:hover:text-green-400">Sobre mí</a>
+			<a href="#career" class="hover:text-green-500 dark:hover:text-green-400">Sobre mí</a>
 			<a href="#experience" class="hover:text-green-500 dark:hover:text-green-400">Experiencia</a>
 			<a href="#projects" class="hover:text-green-500 dark:hover:text-green-400">Proyectos</a>
 		</nav>

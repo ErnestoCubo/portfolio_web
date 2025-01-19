@@ -1,0 +1,149 @@
+{
+    "experiences": [
+        {
+            "position": "Cybersecurity Engineer",
+            "company": "Mediapost",
+            "startDate": "2022-01-01",
+            "finishDate": "2022-07-30",
+            "description": "Pentesting web, análisis de vulnerabilidades. Creación de políticas de seguridad. Gestión de las amenazas, así como bastionado de servidores. Gestión e integración de dispositivos de seguridad.",
+            "duration": "7 meses",
+            "technologiesUsed": [
+                "BurpSuite",
+                "Kali Linux",
+                "Nessus",
+                "Linux",
+                "BitDefender",
+                "TrendMicro"
+            ],
+            "geoLocation": "Madrid/Toledo",
+            "location": "Híbrido",
+            "remoteWorkTools": [
+                "Jira"
+            ],
+            "keyAchievements": [
+                "Reducción del tiempo de respuesta a vulnerabilidades en un 30%",
+                "Implementación de prácticas de bastionado en servidores críticos",
+                "Automatización parcial de análisis de vulnerabilidades"
+            ]
+        },
+        {
+            "position": "Cybersecurity Analyst",
+            "company": "BeDisruptive",
+            "startDate": "2022-08-01",
+            "finishDate": "2023-05-30",
+            "description": "Análisis de vulnerabilidades y amenazas. Gestión de las amenazas, despliegue usando entornos automatizados DevOps. Gestión e integración de dispositivos de seguridad con fuentes de inteligencia. Desarrollo de playbooks para automatizar tareas de seguridad.",
+            "duration": "10 meses",
+            "technologiesUsed": [
+                "Python",
+                "Docker",
+                "Podman",
+                "Oracle Linux",
+                "RedHat",
+                "GitLab",
+                "Splunk",
+                "PaloAlto suite"
+            ],
+            "geoLocation": "Madrid",
+            "location": "Híbrido",
+            "remoteWorkTools": [
+                "Jira"
+            ],
+            "keyAchievements": [
+                "Desarrollo de playbooks que automatizaron el 50% de tareas repetitivas de seguridad",
+                "Integración de nuevas fuentes de inteligencia en dispositivos de seguridad",
+                "Mejora en la detección de amenazas críticas en tiempo real"
+            ]
+        },
+        {
+            "position": "Software Engineer",
+            "company": "Innotec Security",
+            "startDate": "2023-06-01",
+            "finishDate": "2024-08-30",
+            "description": "Diseño y desarrollo de software para la OTAN, INCIBE y CCN (Python, UML, Github). Desarrollo de automatizaciones para la integración de fuentes de inteligencia usando metodologías DevOps (Python, Linux, Docker, Kubernetes, CronJobs). Desarrollo fullstack para crear portales web (Django, React, Node, MariaDB, Redis). Diseño de arquitecturas de microservicios y despliegue en entornos cloud (AWS, Azure, GCP). Integración y configuración de herramientas de análisis de código dinámico y estático (Semgrep, SonarQube).",
+            "duration": "1 año y 3 meses",
+            "technologiesUsed": [
+                "Python",
+                "Docker",
+                "JavaScript",
+                "Kubernetes",
+                "Django",
+                "ExpressJS",
+                "RedisDB",
+                "MariaDB",
+                "Linux",
+                "AWS",
+                "Azure DevOps",
+                "GCP"
+            ],
+            "geoLocation": "Madrid",
+            "location": "Híbrido",
+            "remoteWorkTools": [
+                "Jira",
+                "Trello"
+            ],
+            "keyAchievements": [
+                "Diseño de arquitecturas escalables en entornos cloud híbridos",
+                "Automatización de pipelines DevOps para despliegues más rápidos",
+                "Implementación de herramientas que redujeron el riesgo de seguridad en un 40%"
+            ]
+        },
+        {
+            "position": "Backend Engineer",
+            "company": "Vinci Energies",
+            "startDate": "2023-07-01",
+            "finishDate": "now",
+            "description": "Desarrollo de backend para stream (Golang, Python, FastAPI, Redis). Desarrollo de automatizaciones para monitorización de equipos usando metodologías DevOps (Golang, Python, Linux, Docker, Kubernetes, Jenkins, ServiceNow, Azure). Desarrollo de despliegues automáticos(Azure DevOps, Github Actions, Jenkins, Kubernetes). Desarrollo fullstack para crear portales web (Django, React, MariaDB). Diseño de arquitecturas de microservicios y despliegue en entornos cloud (Golang, Python, AWS, Azure, GCP). Integración y configuración de herramientas de análisis de código dinámico y estático (Semgrep, Dastardly, SonarQube).",
+            "duration": "1 año y 3 meses",
+            "technologiesUsed": [
+                "Golang",
+                "Python",
+                "JavaScript",
+                "FastAPI",
+                "Django",
+                "ReactJS",
+                "RedisDB",
+                "SQL",
+                "Docker",
+                "Kubernetes",
+                "Linux",
+                "Jenkins",
+                "Azure DevOps",
+                "GitHub Actions"
+            ],
+            "geoLocation": "Madrid",
+            "location": "Híbrido",
+            "remoteWorkTools": [
+                "Trello",
+                "GitHub Projects and Issues",
+                "Jira"
+            ],
+            "keyAchievements": [
+                "Diseño de un backend de alta concurrencia para servicios de streaming",
+                "Automatización de monitorización de infraestructura, reduciendo fallos en un 25%"
+            ]
+        }
+    ],
+    "career": {
+        "study": "Soy Ingeniero en Software, con especialización en Ciberseguridad. Durante mis años de formación, me he enfocado en el desarrollo de software y, en paralelo, me he formado en diversas áreas de la ciberseguridad, eligiendo esta como especialización a partir del segundo año de mi carrera.",
+        "certification": "He completado el curso de preparación para el eJPTv2, obteniendo con éxito la certificación tras aprobar el examen. Además, cuento con certificaciones en CVSS y una serie de cursos especializados de Palo Alto, lo que ha enriquecido mis conocimientos en ciberseguridad. He participado, asimismo, en un bootcamp de Kela, una avanzada herramienta de ciberinteligencia israelí, lo que ha sido clave para profundizar en el análisis y la aplicación de estrategias de ciberseguridad de vanguardia.",
+        "currentWork": "Actualmente, soy Ingeniero Backend, especializado en el desarrollo y diseño de soluciones backend. Me encargo de la creación y automatización de procesos para la monitorización de dispositivos y la automatización de tareas, lo que contribuye a la mejora en la eficiencia y confiabilidad de los sistemas dentro de la infraestructura de IT.",
+        "location": "Ubicación: Comunidad de Madrid, España"
+    },
+    "collaborations": [
+        {
+            "company": "OTAN",
+            "role": "Software Engineer",
+            "image": "/assets/otan.png"
+        },
+        {
+            "company": "INCIBE",
+            "role": "Software Engineer",
+            "image": "/assets/incibe.png"
+        },
+        {
+            "company": "CCN",
+            "role": "DevOps Engineer",
+            "image": "/assets/ccn.png"
+        }
+    ]
+}

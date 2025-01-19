@@ -4,25 +4,25 @@
 
 <section class="marquee-container">
 	<div class="marquee">
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-code"></i> Desarrollo de Software
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-cogs"></i> Integración
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-user-secret"></i> Ciberinteligencia
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-server"></i> DevOps
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-shield-alt"></i> Ciberseguridad
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-lock"></i> Desarrollo seguro
 		</span>
-		<span class="marquee-item">
+		<span class="marquee-item text-yellow-400">
 			<i class="fas fa-drafting-compass"></i> Diseño de Software
 		</span>
 	</div>

@@ -21,7 +21,7 @@
 <section class="bg-[#1f1f1f] px-8 py-16 text-white">
 	<h2 class="mb-8 text-center text-4xl font-semibold text-[#76c7c0]">Certificaciones</h2>
 
-	<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+	<div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3">
 		{#each certifications as { certificate, institution, date, image }}
 			<div
 				class="certification-item rounded-xl bg-[#34495e] p-6 shadow-lg transition-all hover:bg-[#2c3e50]"

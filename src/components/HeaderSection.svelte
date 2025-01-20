@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
+
+	export let onOpenModal: () => void;
 
 	onMount(() => {
 		const links = document.querySelectorAll('a[href^="#"]');
@@ -73,10 +75,12 @@
 		</nav>
 
 		<!-- Botón de contacto -->
-		<a
-			href="#contact"
-			class="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-500"
-			>Contáctame</a
+		<button
+			onclick={onOpenModal}
+			class="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600
+			dark:hover:bg-green-500"
 		>
+			Contáctame
+		</button>
 	</div>
 </header>

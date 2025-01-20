@@ -348,5 +348,52 @@
                 "date": "2022-12-01"
             }
         ]
-    }
+    },
+    "challenges": [
+        {
+            "name": "Integrante del equipo de ciberseguridad LDSecurity",
+            "description": "El equipo en el que me encuentro LDSecurity, logró clasificar a la semifinal de la National Cyberleague bajo el nombre de 'Los Mataos', una competencia de ciberseguridad organizada por la Guardia Civil en la que participan equipos de ambito nacional.",
+            "reference": "https://www.linkedin.com/posts/ernesto-cubo-pozo-6b0009172_ctf-teammataos-activity-6877418081245794304-IXzN?utm_source=share&utm_medium=member_desktop"
+        },
+        {
+            "name": "Despliegue de la primera MISP funcional con Podman",
+            "description": "Despliegue de la primera MISP funcional con Podman, una herramienta de ciberseguridad para compartir información sobre amenazas y vulnerabilidades. Se trataba de un reto debido a la falta de información y debido a las capabilidades de Podman.",
+            "reference": ""
+        },
+        {
+            "name": "Descubrir y reportar vulnerabilidad CVE-2022-41617",
+            "description": "A los pocos meses de empezar en la rueda del trabajo, descubrí esta vulnerabilidad la cual no se encontraba reportada en un dispositivo F5. La vulnerabilidad se trata de un RCE en la API de F5, la cual permite a un atacante ejecutar código en el dispositivo WAF todo                    ello usando una contraseña totalmente aleatoria por lo que permitía hacer un bypass de la autenticación.",
+            "reference": "https://drive.google.com/file/d/1VYb1GlRrvqIuq1zyYRjLFm7xs_jM-UQJ/view?usp=sharing"
+        }
+    ],
+    "projects": [
+        {
+            "name": "PIDI",
+            "description": "Proyecto privado fullstack para Android e IOS, desarrollando una web app para la gestión de tickets, coordinación y automatización de la operativa del sector hostelero.",
+            "tech": "Vite, JavaScript, React, Golang, Docker, MySQL",
+            "link": "",
+            "branch": "branch-1"
+        },
+        {
+            "name": "Hellhound",
+            "description": "Herramienta de ciberseguridad para red team, desarrollada con distintos módulos para la realización de fuzzing, crawling y scanning.",
+            "tech": "Python",
+            "link": "https://github.com/ErnestoCubo/HellHound",
+            "branch": "branch-2"
+        },
+        {
+            "name": "eJPTv2 Notes",
+            "description": "Curso en el que recopilo mis notas y metodolgías seguidas para la preparación del eJPTv2.",
+            "tech": "Red Team, Metasploit, Nmap, Enum4linux, SMBclient ...",
+            "link": "https://github.com/ErnestoCubo/eJPTv2-Notes",
+            "branch": "branch-1"
+        },
+        {
+            "name": "Portafolio web",
+            "description": "Proyecto actual que estas visualizando, desarrollado con svelte y tailwindcss.",
+            "tech": "svelte, tailwindcss, docker GitHub Actions",
+            "link": "https://github.com/ErnestoCubo/Portafolio_web",
+            "branch": "branch-3"
+        }
+    ]
 }

@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  web_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web_app
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/ssl:ro
+    depends_on:
+      - web_app
+    restart: on-failure

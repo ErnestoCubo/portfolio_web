@@ -62,5 +62,5 @@ jobs:
 
       - name: Push to Git CR
         run: | 
-          docker tag portfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
-          docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+          docker tag por tfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portafolio_web:latest
+          docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portafolio_web:latest

@@ -88,13 +88,15 @@ jobs:
         run: echo $COSIGN_KEY > cosign.key
         shell: bash
         env:
-          COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
+          COSIGN_KEY: |
+            ${{ secrets.COSIGN_KEY }}
 
       - name: Set up Cosign public key
         run: echo $COSIGN_PUB > cosign.pub
         shell: bash
         env:
-          COSIGN_PUB: ${{ secrets.COSIGN_PUB }}
+          COSIGN_PUB: |
+            ${{ secrets.COSIGN_PUB }}
 
       - name: Install cosign
         run: |

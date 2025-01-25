@@ -1,7 +1,7 @@
 FROM node:22.13-alpine3.21
 LABEL org.opencontainers.image.source="https://github.com/ErnestoCubo/portfolio_web"
 
-RUN apk update && apk upgrade && apk add --no-cache
+RUN apk update && apk add --no-cache
 
 WORKDIR /opt/app
 COPY . /opt/app/

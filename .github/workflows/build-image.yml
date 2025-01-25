@@ -87,14 +87,16 @@ jobs:
       - name: Set up Cosign key
         run: |
           echo $COSIGN_KEY > cosign.key
-          chmod 
+          chmod 600 cosign.key
         shell: bash
         env:
           COSIGN_KEY: |
             ${{ secrets.COSIGN_KEY }}
 
       - name: Set up Cosign public key
-        run: echo $COSIGN_PUB > cosign.pub
+        run: |
+          echo $COSIGN_PUB > cosign.pub
+          chmod 600 cosign.pub
         shell: bash
         env:
           COSIGN_PUB: |

@@ -69,32 +69,45 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: portfolio-image
+          
       - name: Load Docker image
         run: docker load -i portfolio.tar
+
       - name: Log in to GitHub Container Registry
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+
       - name: Push Docker image
         run: |
           docker tag portfolio:${{ github.ref_name }} ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker tag portfolio:${{ github.ref_name }} ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+
       - name: Set up Cosign key
         run: echo $COSIGN_KEY > cosign.key
         shell: bash
         env:
           COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
+
       - name: Set up Cosign public key
         run: echo $COSIGN_PUB > cosign.pub
         shell: bash
         env:
           COSIGN_PUB: ${{ secrets.COSIGN_PUB }}
+
+      - name: Install cosign
+        run: |
+          curl -sSL https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64 -o cosign
+          chmod +x cosign
+          sudo mv cosign /usr/local/bin/cosign
+
       - name: Sign Docker image
         run: |
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
         shell: bash
+
       - name: Verify Docker image
         run: |
           cosign verify --key cosign.pub ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}

@@ -84,6 +84,12 @@ jobs:
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
 
+      - name: Clean up sensitive files
+        run: |
+          rm -f cosign.key
+          echo "Archivos sensibles eliminados."
+        shell: bash
+
       - name: Set up cosign
         uses: sigstore/cosign-installer@v3.5.0
       
@@ -94,10 +100,10 @@ jobs:
           KEY: |
             ${{ secrets.COSIGN_PRIVATE_KEY }}
       - name: Sign Docker image
+        env:
+          COSIGN_PASSWORD: |
+            ${{ secrets.COSIGN_PASSWORD }}
         run: |
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
         shell: bash
-        env:
-          COSIGN_PASSWORD: |
-            ${{ secrets.COSIGN_PASSWORD }}

@@ -52,8 +52,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-folder
-      - name: check files
-        run: ls -l
+      - name: Copy build folder to Docker context
+        run: mv ./portfolio_web/build ./
       - name: Build Docker image
         run: |
           docker build . -t portfolio:${{ github.ref_name }}

@@ -83,8 +83,8 @@ jobs:
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
       - name: Push Docker image
         run: |
-          docker tag portfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
-          docker tag portfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+          docker tag portfolio:${{ github.ref_name }} ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+          docker tag portfolio:${{ github.ref_name }} ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
       - name: Set up Cosign key

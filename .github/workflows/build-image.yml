@@ -89,6 +89,7 @@ jobs:
 
       - name: Sign Docker image
         run: |
+          echo $COSIGN_PASSWORD
           cosign sign --key env://COSIGN_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign sign --key env://COSIGN_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
         shell: bash

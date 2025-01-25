@@ -81,13 +81,22 @@ jobs:
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
       - name: Set up Cosign key
-        run: echo "${{ secrets.COSIGN_KEY }}" | base64 -d > cosign.key
+        run: echo $COSIGN_KEY > cosign.key
+        shell: bash
+        env:
+          COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
       - name: Set up Cosign public key
-        run: echo "${{ secrets.COSIGN_PUB }}" | base64 -d > cosign.pub
-      - name: Sign and Verify Docker image
+        run: echo $COSIGN_PUB > cosign.pub
+        shell: bash
+        env:
+          COSIGN_PUB: ${{ secrets.COSIGN_PUB }}
+      - name: Sign Docker image
         run: |
-        
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+        shell: bash
+      - name: Verify Docker image
+        run: |
           cosign verify --key cosign.pub ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign verify --key cosign.pub ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+        shell: bash

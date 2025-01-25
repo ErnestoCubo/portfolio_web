@@ -91,7 +91,7 @@ jobs:
         shell: bash
 
       - name: Set up cosign
-        uses: sigstore/cosign-installer@v3.5.0
+        uses: sigstore/cosign-installer@v3.7.0
       
       - name: Write Cosign key to file
         run: 'echo "$KEY" > cosign.key'

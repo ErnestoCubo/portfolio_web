@@ -91,20 +91,17 @@ jobs:
         shell: bash
 
       - name: Set up cosign
-        uses: sigstore/cosign-installer@v3.5.0
+        uses: sigstore/cosign-installer@v3.7.0
       
-      - name: Write Cosign key to file
-        run: 'echo "$KEY" > cosign.key'
-        shell: bash
-        env:
-          KEY: |
-            ${{ secrets.COSIGN_PRIVATE_KEY }}
-      - name: Sign Docker image
-        env:
-          COSIGN_PASSWORD: |
-            ${{ secrets.COSIGN_PASSWORD }}
+      - id: docker_meta
+        uses: docker/metadata-action@v4.4.0
+        with:
+          images: ghcr.io/sigstore/sample-honk
+          tags: type=sha,format=long
+
+      - name: Sign image with a key
         run: |
-          cat cosign.key
-          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
-          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
-        shell: bash
+          cosign sign --yes --key env://COSIGN_PRIVATE_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}

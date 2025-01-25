@@ -85,7 +85,9 @@ jobs:
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
 
       - name: Set up Cosign key
-        run: echo $COSIGN_KEY > cosign.key
+        run: |
+          echo $COSIGN_KEY > cosign.key
+          chmod 
         shell: bash
         env:
           COSIGN_KEY: |
@@ -106,8 +108,8 @@ jobs:
 
       - name: Sign Docker image
         run: |
-          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
-          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+          cosign sign --yes --key env://COSIGN_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+          cosign sign --yes --key env://COSIGN_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
         shell: bash
 
       - name: Verify Docker image

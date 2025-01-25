@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.licenses="MIT"
 RUN apk update && apk add --no-cache
 
 WORKDIR /opt/app
-COPY ./build /opt/app/
+COPY build /opt/app/
 
 RUN adduser --disabled-password --gecos '' appuser
 USER appuser    

@@ -1,6 +1,9 @@
 name: Secure Build and Push Docker Image
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [published]
 
@@ -52,6 +55,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-folder
+      - name: Check if build folder exists
+        run: ls -l && ls -l ../ && ls -l build
       - name: Copy build folder to Docker context
         run: mv ./portfolio_web/build ./
       - name: Build Docker image

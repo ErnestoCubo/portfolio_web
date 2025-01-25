@@ -103,7 +103,5 @@ jobs:
         run: |
           cosign sign --yes --key env://COSIGN_PRIVATE_KEY ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
         env:
-          TAGS: ${{ steps.docker_meta.outputs.tags }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
           COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-          DIGEST: ${{ steps.build-and-push.outputs.digest }}

@@ -1,77 +1,91 @@
-name: Build and Push Docker Image on Release
+name: Secure Build and Push Docker Image
 
 on:
   release:
     types: [published]
 
 jobs:
-  lint-docker:
+  lint-code:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hadolint/hadolint-action@v2
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v2
+      - name: Scan dependencies for vulnerabilities
+        run: npm audit --audit-level=high
+      - name: Scan for secrets in the repository
+        uses: zricethezav/gitleaks-action@v2
         with:
-          dockerfile: Dockerfile
+          config-path: .gitleaks.toml
+          verbose: true
 
-  build:
+  build-project:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22.13]
-
+    needs: lint-code
     steps:
       - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 22.13
           cache: "npm"
-
       - name: Create data.json
         run: |
           mkdir -p src/data
           echo "${{ secrets.DATA_JSON }}" | base64 -d > src/data/data.json
-
       - run: npm ci
       - run: npm run build --if-present
 
+  build-docker:
+    runs-on: ubuntu-latest
+    needs: build-project
+    steps:
+      - uses: actions/checkout@v4
       - name: Build Docker image
         run: |
           docker build . \
             -t portfolio:latest \
             -t ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
-
+      - name: Scan Docker image for vulnerabilities
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: portfolio:latest
+          exit-code: 1
+          severity: HIGH,CRITICAL
       - name: Save Docker image as artifact
         run: docker save portfolio:latest -o portfolio.tar
-
       - uses: actions/upload-artifact@v3
         with:
           name: portfolio-image
           path: portfolio.tar
 
-  push-image:
+  sign-and-push-docker:
     runs-on: ubuntu-latest
-    needs: build
-    environment: production
-
+    needs: build-docker
     steps:
       - name: Download Docker image artifact
         uses: actions/download-artifact@v3
         with:
           name: portfolio-image
-
       - name: Load Docker image
         run: docker load -i portfolio.tar
-
       - name: Log in to GitHub Container Registry
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
-
-      - name: Push to GitHub Container Registry
+      - name: Push Docker image and sign
         run: |
           docker tag portfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
           docker tag portfolio:latest ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
           docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+      - name: Set up Cosign key
+        run: echo "${{ secrets.COSIGN_KEY }}" | base64 -d > cosign.key
+      - name: Set up Cosign public key
+        run: echo "${{ secrets.COSIGN_PUB }}" | base64 -d > cosign.pub
+      - name: Sign and Verify Docker image
+        run: |
+        
+          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+          cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
+          cosign verify --key cosign.pub ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
+          cosign verify --key cosign.pub ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest

@@ -95,21 +95,9 @@ jobs:
             ${{ secrets.COSIGN_PRIVATE_KEY }}
       - name: Sign Docker image
         run: |
-          echo $COSIGN_PASSWORD
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
           cosign sign --key cosign.key ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
         shell: bash
         env:
-          COSIGN_KEY: |
-            ${{ secrets.COSIGN_PRIVATE_KEY }}
           COSIGN_PASSWORD: |
             ${{ secrets.COSIGN_PASSWORD }}
-
-      - name: Verify Docker image
-        run: |
-          cosign verify --yes --key env://COSIGN_PUB ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:${{ github.ref_name }}
-          cosign verify --yes --key env://COSIGN_PUB ghcr.io/${{ secrets.GHCR_USERNAME }}/portfolio:latest
-        shell: bash
-        env:
-          COSIGN_PUB: |
-            ${{ secrets.COSIGN_PUB }}

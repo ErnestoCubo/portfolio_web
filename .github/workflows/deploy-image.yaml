@@ -1,1 +1,13 @@
+name: Deploy image on VPS server
 
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect via SSH
+      - name: Download image
+      - name: Deploy image

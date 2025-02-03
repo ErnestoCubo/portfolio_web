@@ -16,7 +16,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           install -m 600 -D /dev/null "$SSH_KEY_PATH"
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
+          echo "$SSH_PRIVATE_KEY" > "$SSH_KEY_PATH"
           ssh-keyscan -H "$SSH_HOST" > ~/.ssh/known_hosts
         shell: bash
         env:

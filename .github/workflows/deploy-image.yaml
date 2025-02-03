@@ -12,19 +12,17 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     steps:
-      - name: Create key
+      - name: Install keys
         run: |
           mkdir -p ~/.ssh
-          install -m 600 -D /dev/null ~/.ssh/private.key
+          install -m 600 -D /dev/null "$SSH_KEY_PATH"
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
           ssh-keyscan -H "$SSH_HOST" > ~/.ssh/known_hosts
-          ssh -i "$SSH_KEY_PATH" "$SSH_USER@$SSH_HOST"
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
           SSH_KEY_PATH: ~/.ssh/private.key
-          SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
       - name: Connect via SSH

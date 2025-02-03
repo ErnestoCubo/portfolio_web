@@ -1,5 +1,7 @@
 name: Deploy image on VPS server
-
+permissions:
+  actions: read
+  contents: read
 on:
   push:
     branches:

@@ -1,4 +1,5 @@
-FROM node:22.13-alpine3.21
+FROM node:22.15-alpine3.21
+RUN apk upgrade libssl3 libcrypto3
 LABEL org.opencontainers.image.authors="Ernesto Cubo <ernestocubo@gmail.com>"
 LABEL org.opencontainers.image.title="Portfolio Web Application"
 LABEL org.opencontainers.image.description="This image contains the built version of the portfolio web application."

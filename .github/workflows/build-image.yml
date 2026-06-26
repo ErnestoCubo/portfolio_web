@@ -52,7 +52,7 @@ jobs:
 
       - name: Save Docker image as artifact
         run: docker save portfolio:${{ github.ref_name }} -o portfolio.tar
-      - uses: actions/upload-artifact@v3.1.3
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: portfolio-image
           path: portfolio.tar
